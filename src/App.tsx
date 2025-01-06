@@ -8,11 +8,21 @@ import styled from "styled-components";
 const App = () => {
   const GridItemWrapper = styled.div`
     background: #f5f5f5;
-    height: 100%;
+    height: 100%; /* Ensures it takes the full height of the grid item */
+    display: flex; /* Ensures child content is properly aligned */
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for visual appeal */
   `;
 
   const GridItemContent = styled.div`
     padding: 8px;
+    width: 100%;
+    height: 100%; /* Matches the parent wrapper's height */
+    display: flex; /* Ensures child content is properly aligned */
+    justify-content: center;
+    align-items: center;
   `;
 
   const Root = styled.div`
@@ -24,19 +34,19 @@ const App = () => {
       <CustomGridLayout
         className="layout"
         layout={[
-          { i: "a", x: 0, y: 0, w: 1, h: 1 },
-          { i: "b", x: 1, y: 0, w: 1, h: 1 },
+          { i: "calenderWidget", x: 0, y: 0, w: 1, h: 1 },
+          { i: "weatherWidget", x: 1, y: 0, w: 1, h: 1 },
         ]}
         cols={2}
         rowHeight={50}
-        width={2000}
+        width={1500}
       >
-        <GridItemWrapper key="a">
+        <GridItemWrapper key="calenderWidget">
           <GridItemContent>
             <CalenderWidget />
           </GridItemContent>
         </GridItemWrapper>
-        <GridItemWrapper key="b">
+        <GridItemWrapper key="weatherWidget">
           <GridItemContent>
             <WeatherWidget />
           </GridItemContent>
