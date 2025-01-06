@@ -30,9 +30,11 @@ const CustomGridLayout: React.FC<CustomGridLayoutProps> = ({
       cols={cols}
       rowHeight={rowHeight}
       width={width}
-    >
+      isResizable // Enable resizing
+      isDraggable // Enable dragging
+          >
       {childArray.map((item, index) => (
-        <div key={index}>
+        <div key={layout[index]?.i || index.toString()} data-grid={layout[index]}>  
           {item}
         </div>
       ))}
