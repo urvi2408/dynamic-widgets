@@ -1,4 +1,3 @@
-import { Card } from "antd";
 import React from "react";
 import GridLayout, { Layout } from "react-grid-layout";
 
@@ -9,7 +8,7 @@ type CustomGridLayoutProps = {
   className?: string;
   layout: GridItem[];
   cols: number;
-  rowHeight: number;
+  rowHeight: React.ReactNode;
   width: number;
 };
 
@@ -32,9 +31,12 @@ const CustomGridLayout: React.FC<CustomGridLayoutProps> = ({
       width={width}
       isResizable
       isDraggable
-          >
+    >
       {childArray.map((item, index) => (
-        <div key={layout[index]?.i || index.toString()} data-grid={layout[index]}>  
+        <div
+          key={layout[index]?.i || index.toString()}
+          data-grid={layout[index]}
+        >
           {item}
         </div>
       ))}
