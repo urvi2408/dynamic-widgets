@@ -19,8 +19,8 @@ const App = () => {
         rowHeight={30}
         width={1000}
       >
-        <div key="a">Content A
-          <Card title="Card title" bordered={false} style={{ width: 300 }}>
+        <div key="a">
+          <Card title="Card title" style={{ height: "100%", overflow: "auto" }} bordered={false} >
           </Card>
         </div>
         <div key="b">Content B</div>
