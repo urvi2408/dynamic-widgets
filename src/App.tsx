@@ -1,32 +1,48 @@
-import { Card } from 'antd';
-// import './App.css';
-import CustomGridLayout from './common/customGridLayout';
+import CustomGridLayout from "./common/customGridLayout";
 import "/node_modules/react-grid-layout/css/styles.css";
-import "/node_modules/react-resizable/css/styles.css"
- 
-
+import "/node_modules/react-resizable/css/styles.css";
+import CalenderWidget from "./components/calender";
+import WeatherWidget from "./components/weather";
+import styled from "styled-components";
 
 const App = () => {
+  const GridItemWrapper = styled.div`
+    background: #f5f5f5;
+    height: 100%;
+  `;
+
+  const GridItemContent = styled.div`
+    padding: 8px;
+  `;
+
+  const Root = styled.div`
+    padding: 16px;
+  `;
+
   return (
-    <>
+    <Root>
       <CustomGridLayout
-        className="custom-grid"
+        className="layout"
         layout={[
-          { i: "a", x: 0, y: 0, w: 1, h: 2 },
-          { i: "b", x: 1, y: 0, w: 3, h: 2 },
+          { i: "a", x: 0, y: 0, w: 1, h: 1 },
+          { i: "b", x: 1, y: 0, w: 1, h: 1 },
         ]}
-        cols={12}
-        rowHeight={30}
-        width={1000}
+        cols={2}
+        rowHeight={50}
+        width={2000}
       >
-        <div key="a">
-          <Card title="Card title" style={{ height: "100%", overflow: "auto" }} bordered={false} >
-          </Card>
-        </div>
-        <div key="b">Content B</div>
-        <div key="c">Content C</div>
+        <GridItemWrapper key="a">
+          <GridItemContent>
+            <CalenderWidget />
+          </GridItemContent>
+        </GridItemWrapper>
+        <GridItemWrapper key="b">
+          <GridItemContent>
+            <WeatherWidget />
+          </GridItemContent>
+        </GridItemWrapper>
       </CustomGridLayout>
-    </>
+    </Root>
   );
 };
 
