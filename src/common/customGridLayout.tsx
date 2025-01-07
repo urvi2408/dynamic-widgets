@@ -4,6 +4,10 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import CalenderWidget from "../components/calender";
 import WeatherWidget from "../components/weather";
+import GoogleMapsWidget from "../components/googleMaps";
+import NewsWidget from "../components/news";
+import StockMarketWidget from "../components/stockMarket";
+import QuotesWidget from "../components/quotes";
 
 const widgetConfigs = [
   {
@@ -17,6 +21,38 @@ const widgetConfigs = [
   {
     key: "weatherWidget",
     component: <WeatherWidget />,
+    x: 2,
+    y: 0,
+    w: 2,
+    h: 2,
+  },
+  {
+    key: "googleMapsWidget",
+    component: <GoogleMapsWidget />,
+    x: 2,
+    y: 0,
+    w: 2,
+    h: 2,
+  },
+  {
+    key: "newsWidget",
+    component: <NewsWidget />,
+    x: 2,
+    y: 0,
+    w: 2,
+    h: 2,
+  },
+  {
+    key: "stockMarketWidget",
+    component: <StockMarketWidget />,
+    x: 2,
+    y: 0,
+    w: 2,
+    h: 2,
+  },
+  {
+    key: "quotesWidget",
+    component: <QuotesWidget />,
     x: 2,
     y: 0,
     w: 2,

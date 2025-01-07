@@ -9,6 +9,10 @@ import WeatherWidget from "./components/weather";
 // import QuotesWidget from "./components/quotes";
 
 import "./App.css";
+import GoogleMapsWidget from "./components/googleMaps";
+import NewsWidget from "./components/news";
+import StockMarketWidget from "./components/stockMarket";
+import QuotesWidget from "./components/quotes";
 
 const App = () => {
   const widgetConfigs = [
@@ -23,6 +27,38 @@ const App = () => {
     {
       key: "weatherWidget",
       component: <WeatherWidget />,
+      x: 2,
+      y: 0,
+      w: 2,
+      h: 2,
+    },
+    {
+      key: "googleMapsWidget",
+      component: <GoogleMapsWidget />,
+      x: 2,
+      y: 0,
+      w: 2,
+      h: 2,
+    },
+    {
+      key: "newsWidget",
+      component: <NewsWidget />,
+      x: 2,
+      y: 0,
+      w: 2,
+      h: 2,
+    },
+    {
+      key: "stockMarketWidget",
+      component: <StockMarketWidget />,
+      x: 2,
+      y: 0,
+      w: 2,
+      h: 2,
+    },
+    {
+      key: "quotesWidget",
+      component: <QuotesWidget />,
       x: 2,
       y: 0,
       w: 2,
