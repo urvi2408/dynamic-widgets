@@ -37,9 +37,9 @@ const App = () => {
           { i: "calenderWidget", x: 0, y: 0, w: 1, h: 1 },
           { i: "weatherWidget", x: 1, y: 0, w: 1, h: 1 },
         ]}
-        cols={2}
-        rowHeight={50}
-        width={1500}
+        cols={12}
+        rowHeight={30}
+        width={1000}
       >
         <GridItemWrapper key="calenderWidget">
           <GridItemContent>
