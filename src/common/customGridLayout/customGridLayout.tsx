@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import GridLayout from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import CalenderWidget from "../components/calender";
-import WeatherWidget from "../components/weather";
-import GoogleMapsWidget from "../components/googleMaps";
-import NewsWidget from "../components/news";
-import StockMarketWidget from "../components/stockMarket";
-import QuotesWidget from "../components/quotes";
+import CalenderWidget from "../../components/calender";
+import WeatherWidget from "../../components/weather";
+import GoogleMapsWidget from "../../components/googleMaps";
+import NewsWidget from "../../components/news";
+import StockMarketWidget from "../../components/stockMarket";
+import QuotesWidget from "../../components/quotes";
+import Toolbox from "../toolbox/toolbox";
+import "./customGridLayout.css";
 
 const widgetConfigs = [
   {
@@ -60,34 +62,6 @@ const widgetConfigs = [
   },
 ];
 
-const Toolbox: React.FC<{
-  toolboxItems: typeof widgetConfigs;
-  onDragStart: (item: (typeof widgetConfigs)[0]) => void;
-}> = ({ toolboxItems, onDragStart }) => {
-  return (
-    <div className="toolbox">
-      <h3>Toolbox</h3>
-      {toolboxItems.map((item) => (
-        <div
-          key={item.key}
-          className="toolbox-item"
-          draggable
-          onDragStart={() => onDragStart(item)}
-          style={{
-            padding: "10px",
-            margin: "5px 0",
-            border: "1px solid black",
-            backgroundColor: "#f0f0f0",
-            cursor: "grab",
-          }}
-        >
-          {item.key}
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const CustomGridLayout: React.FC = () => {
   const [layout, setLayout] = useState<GridItem[]>([]);
   const [toolboxItems, setToolboxItems] = useState(widgetConfigs);
@@ -119,6 +93,7 @@ const CustomGridLayout: React.FC = () => {
   const handleDragOver = (event: React.DragEvent) => {
     event.preventDefault();
   };
+
   const handleDropItem = (event: React.DragEvent) => {
     event.preventDefault();
     const itemData = window.localStorage.getItem("draggedWidget");
@@ -137,14 +112,8 @@ const CustomGridLayout: React.FC = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <Toolbox toolboxItems={toolboxItems} onDragStart={handleDragStart} />
       <div
-        style={{
-          marginLeft: "20px",
-          border: "1px solid #ccc",
-          padding: "10px",
-          flexGrow: 1,
-        }}
+        className="layout-container"
         onDragOver={handleDragOver}
         onDrop={handleDropItem}
       >
@@ -165,29 +134,12 @@ const CustomGridLayout: React.FC = () => {
               <div
                 key={item.i}
                 data-grid={item}
-                style={{
-                  position: "relative",
-                  border: "1px solid #ccc",
-                  padding: "10px",
-                  background: "#fafafa",
-                  height: "100%",
-                }}
+                className="widget-container"
               >
                 {widget?.component}
                 <button
                   onClick={() => handleRemove(item.i)}
-                  style={{
-                    position: "absolute",
-                    top: "5px",
-                    right: "5px",
-                    background: "#fafafa",
-                    color: "black",
-                    border: "none",
-                    borderRadius: "50%",
-                    width: "20px",
-                    height: "20px",
-                    cursor: "pointer",
-                  }}
+                  className="remove-button"
                 >
                   &times;
                 </button>
@@ -196,6 +148,7 @@ const CustomGridLayout: React.FC = () => {
           })}
         </GridLayout>
       </div>
+      <Toolbox toolboxItems={toolboxItems} onDragStart={handleDragStart} />
     </div>
   );
 };
