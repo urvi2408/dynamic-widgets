@@ -1,0 +1,26 @@
+.toolbox {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .toolbox h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .toolbox-item {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+    cursor: grab;
+    border-radius: 3px;
+  }
+  
+  .toolbox-item:hover {
+    background-color: #e0e0e0;
+  }
+  

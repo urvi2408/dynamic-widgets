@@ -1,13 +1,8 @@
-import CustomGridLayout from "./common/customGridLayout";
+import CustomGridLayout from "./common/customGridLayout/customGridLayout";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
 import CalenderWidget from "./components/calender";
 import WeatherWidget from "./components/weather";
-// import GoogleMapsWidget from "./components/googleMaps";
-// import NewsWidget from "./components/news";
-// import StockMarketWidget from "./components/stockMarket";
-// import QuotesWidget from "./components/quotes";
-
 import "./App.css";
 import GoogleMapsWidget from "./components/googleMaps";
 import NewsWidget from "./components/news";
@@ -80,6 +75,7 @@ const App = () => {
         cols={12}
         rowHeight={30}
         width={1300}
+        widgetConfigs={widgetConfigs}
       >
         {widgetConfigs.map(({ key, component }) => (
           <div className="grid-item-wrapper" key={key}>
