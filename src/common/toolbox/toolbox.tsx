@@ -1,5 +1,6 @@
 import React from "react";
 import "./toolbox.css";
+import widgetConfigs from "../../components/dashboard/widgetConfig";
 
 const Toolbox: React.FC<{
   toolboxItems: typeof widgetConfigs;

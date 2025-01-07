@@ -1,7 +1,8 @@
 import { useState } from "react";
+import widgetConfigs from "../../components/dashboard/widgetConfig";
 
 
-export const useGridLayout = (widgetConfigs) => {
+export const useGridLayout = () => {
   const [layout, setLayout] = useState<GridItem[]>([]);
   const [toolboxItems, setToolboxItems] = useState(widgetConfigs);
 
