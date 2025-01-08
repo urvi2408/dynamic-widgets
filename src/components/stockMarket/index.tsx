@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Table, Tag, Typography } from "antd";
 
 const { Title } = Typography;
 
-const StockMarketWidget: React.FC = () => {
+const StockMarketWidget = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     // Mock API call
     const fetchStockData = async () => {
       const response = [
-        { "symbol": "AAPL", "company": "Apple Inc.", "price": 150.75, "change": 1.2 },
-        { "symbol": "GOOGL", "company": "Alphabet Inc.", "price": 2803.89, "change": -0.5 },
-        { "symbol": "AMZN", "company": "Amazon.com Inc.", "price": 3456.78, "change": 0.8 }
-      ]
+        { symbol: "AAPL", company: "Apple Inc.", price: 150.75, change: 1.2 },
+        {
+          symbol: "GOOGL",
+          company: "Alphabet Inc.",
+          price: 2803.89,
+          change: -0.5,
+        },
+        {
+          symbol: "AMZN",
+          company: "Amazon.com Inc.",
+          price: 3456.78,
+          change: 0.8,
+        },
+      ];
       setData(response);
     };
 

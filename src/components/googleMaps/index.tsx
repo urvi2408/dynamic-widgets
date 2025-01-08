@@ -6,7 +6,7 @@ type HoverInfo = {
   position: { x: number; y: number };
 };
 
-const GoogleMapsWidget: React.FC = () => {
+const GoogleMapsWidget = () => {
   const geoUrl = "https://unpkg.com/world-atlas@2/countries-50m.json";
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
 

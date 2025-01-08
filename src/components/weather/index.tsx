@@ -1,6 +1,4 @@
-import React from "react";
-
-const WeatherWidget: React.FC = () => {
+const WeatherWidget = () => {
   return "Weather Widget";
 };
 
