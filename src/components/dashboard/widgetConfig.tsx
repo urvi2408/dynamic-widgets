@@ -1,5 +1,4 @@
 import CalendarWidget from "../calender";
-import CalenderWidget from "../calender";
 import GoogleMapsWidget from "../googleMaps";
 import NewsWidget from "../news";
 import QuotesWidget from "../quotes";

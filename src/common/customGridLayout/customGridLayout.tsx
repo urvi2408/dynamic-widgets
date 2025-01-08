@@ -17,9 +17,10 @@ const CustomGridLayout = () => {
   } = useGridLayout();
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex" }} onClick={(e) => e.stopPropagation()}>
       <div
         className="layout-container"
+        onClick={(e) => e.stopPropagation()}
         onDragOver={handleDragOver}
         onDrop={handleDropItem}
       >
@@ -37,7 +38,12 @@ const CustomGridLayout = () => {
               (widget) => widget.key === item.i
             );
             return (
-              <div key={item.i} data-grid={item} className="widget-container">
+              <div
+                key={item.i}
+                data-grid={item}
+                className="widget-container"
+                onClick={(e) => e.stopPropagation()}
+              >
                 {widget?.component}
                 <button
                   onClick={() => handleRemove(item.i)}
