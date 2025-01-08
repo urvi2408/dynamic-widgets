@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Table, Tag, Typography } from "antd";
-
-const { Title } = Typography;
+import { Card, Table, Tag } from "antd";
 
 const StockMarketWidget = () => {
   const [data, setData] = useState([]);
@@ -64,13 +62,22 @@ const StockMarketWidget = () => {
 
   return (
     <div style={{ padding: 16, background: "#fff", borderRadius: 8 }}>
-      <Title level={4}>Stock Market Widget</Title>
-      <Table
-        dataSource={data}
-        columns={columns}
-        rowKey="symbol"
-        pagination={{ pageSize: 5 }}
-      />
+      <Card
+        title="Stock Market Widget"
+        bordered
+        style={{
+          width: 500,
+          borderRadius: "6px",
+          boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
+        }}
+      >
+        <Table
+          dataSource={data}
+          columns={columns}
+          rowKey="symbol"
+          pagination={{ pageSize: 5 }}
+        />
+      </Card>
     </div>
   );
 };
