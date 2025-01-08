@@ -43,6 +43,10 @@ const NewsWidget = () => {
             <Card
               title={news.title}
               bordered={false}
+              style={{
+                borderRadius: "6px",
+                boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
+              }}
               extra={
                 <a href={news.url} target="_blank" rel="noopener noreferrer">
                   Read more

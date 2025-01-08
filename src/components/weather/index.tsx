@@ -84,9 +84,8 @@ const WeatherWidget: React.FC = () => {
         bordered
         style={{
           width: 400,
-          border: "1px solid #d9d9d9",
-          borderRadius: "4px",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "6px",
+          boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
         }}
       >
         <Spin />
@@ -101,9 +100,8 @@ const WeatherWidget: React.FC = () => {
         bordered
         style={{
           width: 400,
-          border: "1px solid #d9d9d9",
-          borderRadius: "4px",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "6px",
+          boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
         }}
       >
         <Typography.Text type="danger">
@@ -119,9 +117,8 @@ const WeatherWidget: React.FC = () => {
       bordered
       style={{
         width: 400,
-        border: "1px solid #d9d9d9",
-        borderRadius: "4px",
-        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+        borderRadius: "6px",
+        boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
       }}
     >
       <Typography.Title level={4}>{weatherData.city}</Typography.Title>
