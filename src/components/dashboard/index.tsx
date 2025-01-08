@@ -9,6 +9,7 @@ const Dashboard = () => {
     <div className="root">
       <CustomGridLayout
         className="layout"
+        onClick={(e) => e.stopPropagation()}
         layout={widgetConfigs.map(({ key, x, y, w, h }) => ({
           i: key,
           x,
