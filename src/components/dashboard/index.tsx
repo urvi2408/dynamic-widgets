@@ -6,8 +6,7 @@ import CustomGridLayout from "../../common/customGridLayout/customGridLayout";
 
 const Dashboard = () => {
   return (
-    <div className="root">
-      <CustomGridLayout
+    <CustomGridLayout
         className="layout"
         onClick={(e) => e.stopPropagation()}
         layout={widgetConfigs.map(({ key, x, y, w, h }) => ({
@@ -28,7 +27,6 @@ const Dashboard = () => {
           </div>
         ))}
       </CustomGridLayout>
-    </div>
   );
 };
 

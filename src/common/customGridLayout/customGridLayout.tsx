@@ -17,7 +17,7 @@ const CustomGridLayout = () => {
   } = useGridLayout();
 
   return (
-    <div style={{ display: "flex" }} onClick={(e) => e.stopPropagation()}>
+    <div style={{ display: "flex", gap:"24px" }} onClick={(e) => e.stopPropagation()}>
       <div
         className="layout-container"
         onClick={(e) => e.stopPropagation()}
@@ -27,9 +27,9 @@ const CustomGridLayout = () => {
         <GridLayout
           className="layout"
           layout={layout}
-          cols={12}
-          rowHeight={50}
-          width={1000}
+          // cols={12}
+          // rowHeight={50}
+          // width={1000}
           isResizable
           isDraggable
         >
