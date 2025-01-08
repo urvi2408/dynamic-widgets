@@ -1,6 +1,4 @@
-import React from "react";
-
-const CalenderWidget: React.FC = () => {
+const CalenderWidget = () => {
   return "Calender Widget";
 };
 
