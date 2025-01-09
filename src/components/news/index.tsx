@@ -1,4 +1,4 @@
-import { Card, Col, Row, Typography } from "antd";
+import { Card, Typography } from "antd";
 
 const newsData = [
   {
@@ -37,30 +37,26 @@ const NewsWidget = () => {
   return (
     <div>
       <Title level={4}>Latest News</Title>
-      <Row gutter={[16, 16]}>
-        {newsData.map((news, index) => (
-          <Col xs={24} sm={12} md={8} lg={6} key={index}>
-            <Card
-              title={news.title}
-              bordered={false}
-              style={{
-                borderRadius: "6px",
-                boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
-              }}
-              extra={
-                <a href={news.url} target="_blank" rel="noopener noreferrer">
-                  Read more
-                </a>
-              }
-            >
-              <p>{news.description}</p>
-              <p>
-                <i>Source: {news.source}</i>
-              </p>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      {newsData.map((news, _index) => (
+        <Card
+          title={news.title}
+          bordered={false}
+          style={{
+            borderRadius: "6px",
+            boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
+          }}
+          extra={
+            <a href={news.url} target="_blank" rel="noopener noreferrer">
+              Read more
+            </a>
+          }
+        >
+          <p>{news.description}</p>
+          <p>
+            <i>Source: {news.source}</i>
+          </p>
+        </Card>
+      ))}
     </div>
   );
 };
