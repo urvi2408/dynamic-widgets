@@ -61,8 +61,7 @@ const StockMarketWidget = () => {
   ];
 
   return (
-    <div style={{ padding: 16, background: "#fff", borderRadius: 8 }}>
-      <Card
+    <Card
         title="Stock Market Widget"
         bordered
         style={{
@@ -78,7 +77,6 @@ const StockMarketWidget = () => {
           pagination={{ pageSize: 5 }}
         />
       </Card>
-    </div>
   );
 };
 
