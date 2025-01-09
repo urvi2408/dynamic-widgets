@@ -7,9 +7,23 @@
     box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.1);
     flex-grow: 1;
     height: calc(100vh - 100px);   
+    overflow-y: auto;
     width: auto;
     }
+    .layout-container::-webkit-scrollbar {
+      width: 4px;
+      border-radius: 15px;
+    }
   
+    /* Track */
+    .layout-container::-webkit-scrollbar-track {
+      background: #f6f6f6;
+    }
+  
+    /* Handle */
+    .layout-container::-webkit-scrollbar-thumb {
+      background: #4f46e5;
+    }
   .widget-container {
     position: relative;
     /* padding: 10px;
