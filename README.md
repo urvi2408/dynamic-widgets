@@ -1,15 +1,93 @@
-# React + TypeScript + Vite
+# Dynamic Dashboard Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable dashboard application built with React, TypeScript, and Vite featuring drag-and-drop widgets for a personalized user experience.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Vercel Deployment:** [https://dynamic-widgets-7ynp-seven.vercel.app/](https://dynamic-widgets-7ynp-seven.vercel.app/)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Drag-and-Drop Interface**: Rearrange widgets with intuitive drag-and-drop functionality
+- **Multiple Widget Types**: Calendar, Weather, News, Google Maps, Stock Market, Quotes, and more
+- **Customizable Layout**: Add, remove, and resize widgets to create your perfect dashboard
+- **Responsive Design**: Works seamlessly across different screen sizes
+- **Real-time Updates**: Dynamic content updates for weather, news, and market data
+
+## 🛠️ Tech Stack
+
+- **React** - UI library
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **React Grid Layout** - Drag-and-drop grid system
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd dynamic-dashboard-widget
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Build for production:
+```bash
+npm run build
+# or
+yarn build
+```
+
+## 📱 Available Widgets
+
+- **Calendar Widget**: View and manage your schedule
+- **Weather Widget**: Real-time weather information
+- **News Widget**: Latest news updates
+- **Google Maps Widget**: Interactive map integration
+- **Stock Market Widget**: Track stock prices and market trends
+- **Quotes Widget**: Inspirational quotes
+
+## 🎨 Customization
+
+The dashboard layout is fully customizable. Use the toolbox to:
+- Add new widgets to your dashboard
+- Drag and drop to rearrange widgets
+- Resize widgets to your preferred size
+- Remove widgets you don't need
+
+## 📄 Project Structure
+
+```
+src/
+├── common/
+│   ├── customGridLayout/   # Grid layout component
+│   └── toolbox/             # Widget toolbox
+├── components/
+│   ├── calendar/            # Calendar widget
+│   ├── dashboard/           # Main dashboard component
+│   ├── weather/             # Weather widget
+│   ├── news/                # News widget
+│   ├── googleMaps/          # Google Maps widget
+│   ├── stockMarket/         # Stock market widget
+│   └── quotes/              # Quotes widget
+└── types/                   # TypeScript type definitions
+```
+
+## 🔧 Expanding the ESLint configuration
+
+For production applications, update the configuration to enable type-aware lint rules:
 
 - Configure the top-level `parserOptions` property like this:
 
@@ -48,3 +126,15 @@ export default tseslint.config({
   },
 })
 ```
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+---
+
+**Built with ❤️ using React, TypeScript, and Vite**
