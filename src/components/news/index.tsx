@@ -1,4 +1,4 @@
-import { Card, Typography } from "antd";
+import { Card } from "antd";
 
 const newsData = [
   {
