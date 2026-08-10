@@ -22,14 +22,14 @@ const widgetConfigs = [
     w: 2,
     h: 2,
   },
-  {
-    key: "googleMapsWidget",
-    component: <GoogleMapsWidget />,
-    x: 2,
-    y: 0,
-    w: 2,
-    h: 2,
-  },
+  // {
+  //   key: "googleMapsWidget",
+  //   component: <GoogleMapsWidget />,
+  //   x: 2,
+  //   y: 0,
+  //   w: 2,
+  //   h: 2,
+  // },
   {
     key: "newsWidget",
     component: <NewsWidget />,
