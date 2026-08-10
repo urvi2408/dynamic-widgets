@@ -1,21 +1,23 @@
 import React from "react";
 import { Calendar, Card, Badge, List, Typography } from "antd";
-import type { Moment } from "moment";
+import type { Dayjs } from "dayjs";
 import { useCalendarWidget } from "./useCalendarWidget";
+import "./calendar.css";
 
 const CalendarWidget: React.FC = () => {
   const { selectedDate, getSchedules, onSelect } = useCalendarWidget();
 
-  const dateCellRender = (value: Moment) => {
+  const dateCellRender = (value: Dayjs) => {
     const schedules = getSchedules(value);
     return schedules.length ? (
-      <ul style={{ padding: 0, listStyle: "none" }}>
-        {schedules.map((item, index) => (
-          <li key={index}>
-            <Badge status="success" text={item} />
-          </li>
-        ))}
-      </ul>
+      <div style={{ 
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%"
+      }}>
+        <Badge count={schedules.length} style={{ backgroundColor: "#52c41a" }} />
+      </div>
     ) : null;
   };
 

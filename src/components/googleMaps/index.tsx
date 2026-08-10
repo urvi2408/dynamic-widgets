@@ -6,11 +6,18 @@ type HoverInfo = {
   position: { x: number; y: number };
 };
 
+type GeoType = {
+  rsmKey: string;
+  properties: {
+    name: string;
+  };
+};
+
 const GoogleMapsWidget = () => {
   const geoUrl = "https://unpkg.com/world-atlas@2/countries-50m.json";
   const [hoverInfo, setHoverInfo] = useState<HoverInfo | null>(null);
 
-  const handleMouseEnter = (geo: any, event: React.MouseEvent) => {
+  const handleMouseEnter = (geo: GeoType, event: React.MouseEvent) => {
     const countryName = geo.properties.name;
 
     setHoverInfo({
@@ -27,12 +34,12 @@ const GoogleMapsWidget = () => {
     <div>
       <ComposableMap>
         <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => (
+          {({ geographies }: { geographies: GeoType[] }) =>
+            geographies.map((geo: GeoType) => (
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                onMouseEnter={(event) => handleMouseEnter(geo, event)}
+                onMouseEnter={(event: React.MouseEvent) => handleMouseEnter(geo, event)}
                 onMouseLeave={handleMouseLeave}
                 style={{
                   default: { fill: "#D6D6DA", outline: "none" },

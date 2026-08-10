@@ -31,12 +31,17 @@ const newsData = [
   },
 ];
 
-const { Title } = Typography;
 
 const NewsWidget = () => {
   return (
-    <div>
-      <Title level={4}>Latest News</Title>
+    <Card
+      title="Latest News Widget"
+      bordered
+      style={{
+        width: 500,
+        boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
+      }}
+    >     
       {newsData.map((news, _index) => (
         <Card
           title={news.title}
@@ -57,7 +62,7 @@ const NewsWidget = () => {
           </p>
         </Card>
       ))}
-    </div>
+    </Card>
   );
 };
 

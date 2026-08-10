@@ -1,6 +1,8 @@
 import { useState } from "react";
 import widgetConfigs from "../../components/dashboard/widgetConfig";
+import { Layout } from "react-grid-layout";
 
+type GridItem = Layout;
 
 export const useGridLayout = () => {
   const [layout, setLayout] = useState<GridItem[]>([]);
@@ -50,6 +52,10 @@ export const useGridLayout = () => {
     }
   };
 
+  const handleLayoutChange = (newLayout: Layout[]) => {
+    setLayout(newLayout);
+  };
+
   return {
     layout,
     toolboxItems,
@@ -57,5 +63,6 @@ export const useGridLayout = () => {
     handleDropItem,
     handleRemove,
     handleDragOver,
+    handleLayoutChange,
   };
 };

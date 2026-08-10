@@ -1,0 +1,25 @@
+.calendarWidget .ant-picker-calendar-date-content {
+  height: 24px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+.calendarWidget .ant-picker-cell-inner {
+  min-height: 60px;
+  padding: 4px;
+}
+
+.calendarWidget .ant-picker-calendar-date {
+  padding: 2px;
+}
+
+.calendarWidget .ant-badge-count {
+  font-size: 10px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 4px;
+}

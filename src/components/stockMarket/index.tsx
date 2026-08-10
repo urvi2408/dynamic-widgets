@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import { Card, Table, Tag } from "antd";
 
+type StockRow = {
+  symbol: string;
+  company: string;
+  price: number;
+  change: number;
+};
+
 const StockMarketWidget = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<StockRow[]>([]);
 
   useEffect(() => {
     // Mock API call
@@ -44,7 +51,7 @@ const StockMarketWidget = () => {
       title: "Price",
       dataIndex: "price",
       key: "price",
-      sorter: (a: any, b: any) => a.price - b.price,
+      sorter: (a: StockRow, b: StockRow) => a.price - b.price,
       render: (price: number) => `$${price.toFixed(2)}`,
     },
     {
@@ -66,7 +73,6 @@ const StockMarketWidget = () => {
         bordered
         style={{
           width: 500,
-          borderRadius: "6px",
           boxShadow: "0px 0px 24px 0px rgba(0,0,0,0.1)",
         }}
       >
